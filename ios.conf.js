@@ -20,8 +20,9 @@ export const config = {
         "appium:deviceName": "iPhone 16",
         "appium:platformVersion": "18.1",
         "appium:automationName": "XCUITest",
-        "appiumVersion": "2.16.2",
+        "appiumVersion": "2.0.0",
         "appium:autoAcceptAlerts": true,
+        "autoGrantPermissions": true,
         "video": true,
         "network": true,
         "devicelog": true

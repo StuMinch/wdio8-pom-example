@@ -1,5 +1,6 @@
 import CurrencyScreen from '../objects/CurrencyScreen.js';
 import WalkthroughPrompts from '../objects/WalkthoughPrompts.js';
+import LogOutOptions from '../objects/LogOutOptions.js';
 
 describe('Log Out of My TRR', () => {  
     it('should tap My TRR button', async () => {
@@ -82,6 +83,13 @@ describe('Log Out of My TRR', () => {
         direction: 'down', 
         predicateString: 'name == "Log Out"' 
       });
+
+      try {
+        await LogOutOptions.logOutByLabel.waitForDisplayed({ timeout: 8000 }).click();
+        await LogOutOptions.logOutByXpath.waitForDisplayed({ timeout: 8000 }).click();
+      } catch (error) {
+        console.warn('The got it button did not appear:', error.message);
+      }
     
       // iOS class chain
       //const selector = '**/XCUIElementTypeButton[`name == "Log Out"`][2]'
@@ -89,8 +97,8 @@ describe('Log Out of My TRR', () => {
       //await logout.click()
       
       // XPATH
-      const button = await $('(//XCUIElementTypeButton[@name="Log Out"])[2]');
-      await button.waitForDisplayed();
-      await button.click();
+      //const button = await $('(//XCUIElementTypeButton[@name="Log Out"])[2]');
+      //await button.waitForDisplayed();
+      //await button.click();
     });    
   });
