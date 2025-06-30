@@ -84,6 +84,13 @@ describe('Log Out of My TRR', () => {
         predicateString: 'name == "Log Out"' 
       });
 
+      //await driver.touchAction([
+      //  { action: 'press', x: 10, y: 461 },
+      //  { action: 'wait', ms: 200 },
+      //  { action: 'moveTo', x: 10, y: 182 },
+      //  { action: 'release' }
+      //]);
+
       try {
         await LogOutOptions.logOutByLabel.waitForDisplayed({ timeout: 8000 }).click();
         await LogOutOptions.logOutByXpath.waitForDisplayed({ timeout: 8000 }).click();
@@ -91,14 +98,5 @@ describe('Log Out of My TRR', () => {
         console.warn('The got it button did not appear:', error.message);
       }
     
-      // iOS class chain
-      //const selector = '**/XCUIElementTypeButton[`name == "Log Out"`][2]'
-      //const logout = await $(`-ios class chain:${selector}`)
-      //await logout.click()
-      
-      // XPATH
-      //const button = await $('(//XCUIElementTypeButton[@name="Log Out"])[2]');
-      //await button.waitForDisplayed();
-      //await button.click();
     });    
   });

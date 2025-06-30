@@ -4,7 +4,7 @@ export const config = {
   
     updateJob: true,
     reporters: ["spec"],
-    specs: ["./test/specs/test.browser.mock.js"],
+    specs: ["./test/specs/test.browser.error.js"],
     exclude: [],
     services: ["lambdatest", "devtools"],
   
@@ -20,7 +20,7 @@ export const config = {
           selenium_version: "4.0.0",
           user: process.env.LT_USERNAME,
           accessKey: process.env.LT_ACCESS_KEY,
-          build: 'WDIO8 browser.mock example using CDP on HyperExecute',
+          build: 'Validate Page Title',
           console: true,
         }
       }],      
